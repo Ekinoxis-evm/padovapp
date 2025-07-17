@@ -1,86 +1,59 @@
-import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
-import "./globals.css";
-import Navigation from "@/components/Navigation";
+import type { Metadata } from "next"
+import { Inter, Playfair_Display } from "next/font/google"
+import "./globals.css"
+import Navigation from "@/components/Navigation"
 
-const inter = Inter({
+const inter = Inter({ 
+  subsets: ["latin"],
   variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
+  display: 'swap',
+})
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const playfair = Playfair_Display({ 
   subsets: ["latin"],
-  display: "swap",
-});
+  variable: "--font-playfair",
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Padova - Luxury Fashion",
   description: "Premium Colombian fashion brand - Mediterranean-inspired luxury with Colombian craftsmanship",
-  keywords: ["fashion", "luxury", "Colombian", "Padova", "designer", "clothing"],
-  authors: [{ name: "Padova Fashion" }],
-  creator: "Padova Fashion",
-  publisher: "Padova Fashion",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  keywords: "luxury fashion, Colombian fashion, Mediterranean style, Padova, premium clothing",
+  authors: [{ name: "Padova" }],
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  themeColor: "#6b7c59",
   manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "Padova",
+  icons: {
+    icon: [
+      { url: "/icons/icon-144x144.png", sizes: "144x144", type: "image/png" },
+      { url: "/icons/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icons/icon-144x144.png",
   },
-  openGraph: {
-    type: "website",
-    siteName: "Padova",
-    title: "Padova - Luxury Fashion",
-    description: "Premium Colombian fashion brand - Mediterranean-inspired luxury with Colombian craftsmanship",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Padova - Luxury Fashion",
-    description: "Premium Colombian fashion brand - Mediterranean-inspired luxury with Colombian craftsmanship",
-  },
-};
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-  ],
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-};
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Padova" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#6b7c59" />
       </head>
-      <body
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased min-h-screen bg-gradient-to-br from-slate-50 to-stone-100 dark:from-slate-900 dark:to-stone-900`}
-      >
-        <div className="flex flex-col min-h-screen">
-          <main className="flex-1 pb-20 md:pb-0">
-            {children}
-          </main>
-          <Navigation />
-        </div>
+      <body className="font-inter antialiased bg-padova-cream">
+        <Navigation />
+        <main className="lg:ml-64">
+          {children}
+        </main>
       </body>
     </html>
-  );
+  )
 }

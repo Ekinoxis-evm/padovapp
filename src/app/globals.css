@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @theme {
+  /* Padova Brand Colors */
   --color-padova-olive: #6b7c59;
   --color-padova-olive-light: #8a9878;
   --color-padova-olive-dark: #5a6b49;
@@ -12,8 +13,62 @@
   --color-padova-taupe-light: #d6d3d1;
   --color-padova-cream: #fafaf9;
   
+  /* Standard Colors for Compatibility */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-transparent: transparent;
+  
+  /* Stone/Gray Scale */
+  --color-stone-50: #fafaf9;
+  --color-stone-100: #f5f5f4;
+  --color-stone-200: #e7e5e4;
+  --color-stone-300: #d6d3d1;
+  --color-stone-400: #a8a29e;
+  --color-stone-500: #78716c;
+  --color-stone-600: #57534e;
+  --color-stone-700: #44403c;
+  --color-stone-800: #292524;
+  --color-stone-900: #1c1917;
+  
+  /* Yellow/Amber Scale for highlights */
+  --color-yellow-50: #fefce8;
+  --color-yellow-100: #fef3c7;
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  
+  /* Font Families */
   --font-family-playfair: 'Playfair Display', serif;
   --font-family-inter: 'Inter', system-ui, sans-serif;
+  --font-family-sans: var(--font-family-inter);
+  
+  /* Spacing Scale */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
 
 @layer base {
@@ -28,6 +83,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--color-padova-cream);
+    color: var(--color-stone-700);
   }
 
   /* Custom scrollbar */
@@ -52,61 +108,64 @@
 @layer components {
   .btn-primary {
     background: linear-gradient(135deg, var(--color-padova-navy), var(--color-padova-navy-light));
-    color: white;
+    color: var(--color-white);
     padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: var(--radius-lg);
     font-weight: 600;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    box-shadow: var(--shadow-lg);
     transition: all 0.2s ease-in-out;
     border: none;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
   }
 
   .btn-primary:hover {
     background: linear-gradient(135deg, var(--color-padova-navy-light), var(--color-padova-navy));
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-1px) scale(1.02);
   }
 
   .btn-secondary {
     border: 2px solid var(--color-padova-olive);
     color: var(--color-padova-olive-dark);
+    background: var(--color-white);
     padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: var(--radius-lg);
     font-weight: 600;
-    background: transparent;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
   }
 
   .btn-secondary:hover {
-    background-color: var(--color-padova-cream);
-    color: var(--color-padova-navy);
+    background-color: var(--color-padova-olive);
+    color: var(--color-white);
+    transform: translateY(-1px);
   }
 
   .card {
-    background: white;
-    border-radius: 0.75rem;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    border: 1px solid #f5f5f4;
-    transition: box-shadow 0.3s ease;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-stone-200);
+    transition: all 0.3s ease;
   }
 
   .card:hover {
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    box-shadow: var(--shadow-lg);
   }
 
   .luxury-gradient {
     background: linear-gradient(135deg, 
       var(--color-padova-cream) 0%, 
-      #ffffff 50%, 
-      var(--color-padova-taupe-light) 100%);
+      var(--color-white) 50%, 
+      var(--color-stone-50) 100%);
   }
 
   .padova-olive-gradient {
@@ -118,55 +177,59 @@
   .padova-hero-gradient {
     background: linear-gradient(135deg, 
       var(--color-padova-cream) 0%, 
-      #ffffff 30%, 
+      var(--color-white) 30%, 
       var(--color-padova-olive-light) 100%);
     opacity: 0.1;
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  /* Text Colors */
+  .text-padova-olive { color: var(--color-padova-olive); }
+  .text-padova-olive-dark { color: var(--color-padova-olive-dark); }
+  .text-padova-navy { color: var(--color-padova-navy); }
+  .text-white { color: var(--color-white); }
+  .text-stone-500 { color: var(--color-stone-500); }
+  .text-stone-600 { color: var(--color-stone-600); }
+  .text-stone-700 { color: var(--color-stone-700); }
 
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  /* Background Colors */
+  .bg-padova-olive { background-color: var(--color-padova-olive); }
+  .bg-padova-navy { background-color: var(--color-padova-navy); }
+  .bg-padova-cream { background-color: var(--color-padova-cream); }
+  .bg-white { background-color: var(--color-white); }
+  .bg-stone-50 { background-color: var(--color-stone-50); }
+  .bg-stone-100 { background-color: var(--color-stone-100); }
+  .bg-stone-200 { background-color: var(--color-stone-200); }
+  
+  /* Background Colors with Opacity */
+  .bg-white\/90 { background-color: rgb(255 255 255 / 0.9); }
+  .bg-white\/95 { background-color: rgb(255 255 255 / 0.95); }
+  
+  /* Border Colors */
+  .border-stone-200 { border-color: var(--color-stone-200); }
+  .border-stone-300 { border-color: var(--color-stone-300); }
+  
+  /* Font Families */
+  .font-playfair { font-family: var(--font-family-playfair); }
+  .font-inter { font-family: var(--font-family-inter); }
+  
+  /* Gradient Backgrounds */
+  .from-stone-100 { --tw-gradient-from: var(--color-stone-100); }
+  .to-stone-200 { --tw-gradient-to: var(--color-stone-200); }
+  .from-yellow-50 { --tw-gradient-from: var(--color-yellow-50); }
+  .to-amber-50 { --tw-gradient-to: var(--color-amber-50); }
+  .from-yellow-100\/30 { --tw-gradient-from: rgb(254 243 199 / 0.3); }
+  .to-amber-100\/30 { --tw-gradient-to: rgb(254 243 199 / 0.3); }
 
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-
-  .text-padova-olive {
-    color: var(--color-padova-olive);
-  }
-
-  .text-padova-olive-dark {
-    color: var(--color-padova-olive-dark);
-  }
-
-  .text-padova-navy {
-    color: var(--color-padova-navy);
-  }
-
-  .bg-padova-olive {
-    background-color: var(--color-padova-olive);
-  }
-
-  .bg-padova-navy {
-    background-color: var(--color-padova-navy);
-  }
-
-  .bg-padova-cream {
-    background-color: var(--color-padova-cream);
-  }
-
-  .font-playfair {
-    font-family: var(--font-family-playfair);
-  }
-
-  .font-inter {
-    font-family: var(--font-family-inter);
-  }
+  /* Utility Classes */
+  .text-balance { text-wrap: balance; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  
+  /* Backdrop Blur */
+  .backdrop-blur-md { backdrop-filter: blur(12px); }
+  
+  /* Opacity Scale */
+  .bg-padova-olive\/10 { background-color: rgb(107 124 89 / 0.1); }
 }
