@@ -1,26 +1,172 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-padova-olive: #6b7c59;
+  --color-padova-olive-light: #8a9878;
+  --color-padova-olive-dark: #5a6b49;
+  --color-padova-navy: #1e293b;
+  --color-padova-navy-light: #334155;
+  --color-padova-taupe: #a8a29e;
+  --color-padova-taupe-light: #d6d3d1;
+  --color-padova-cream: #fafaf9;
+  
+  --font-family-playfair: 'Playfair Display', serif;
+  --font-family-inter: 'Inter', system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    font-family: var(--font-family-inter);
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-padova-cream);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-padova-taupe-light);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-padova-taupe);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-padova-navy), var(--color-padova-navy-light));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transition: all 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-padova-navy-light), var(--color-padova-navy));
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    transform: scale(1.05);
+  }
+
+  .btn-secondary {
+    border: 2px solid var(--color-padova-olive);
+    color: var(--color-padova-olive-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-padova-cream);
+    color: var(--color-padova-navy);
+  }
+
+  .card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    border: 1px solid #f5f5f4;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  .luxury-gradient {
+    background: linear-gradient(135deg, 
+      var(--color-padova-cream) 0%, 
+      #ffffff 50%, 
+      var(--color-padova-taupe-light) 100%);
+  }
+
+  .padova-olive-gradient {
+    background: linear-gradient(135deg, 
+      var(--color-padova-olive-light), 
+      var(--color-padova-olive));
+  }
+
+  .padova-hero-gradient {
+    background: linear-gradient(135deg, 
+      var(--color-padova-cream) 0%, 
+      #ffffff 30%, 
+      var(--color-padova-olive-light) 100%);
+    opacity: 0.1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-padova-olive {
+    color: var(--color-padova-olive);
+  }
+
+  .text-padova-olive-dark {
+    color: var(--color-padova-olive-dark);
+  }
+
+  .text-padova-navy {
+    color: var(--color-padova-navy);
+  }
+
+  .bg-padova-olive {
+    background-color: var(--color-padova-olive);
+  }
+
+  .bg-padova-navy {
+    background-color: var(--color-padova-navy);
+  }
+
+  .bg-padova-cream {
+    background-color: var(--color-padova-cream);
+  }
+
+  .font-playfair {
+    font-family: var(--font-family-playfair);
+  }
+
+  .font-inter {
+    font-family: var(--font-family-inter);
+  }
 }
