@@ -18,13 +18,13 @@ const mockItems = [
   },
   {
     id: 2,
-    name: "Vestido Costa D'Oro",
+    name: "Vestido Costa D&apos;Oro",
     category: "Vestidos",
     color: "Beige",
     season: "Verano",
     purchaseDate: "2024-02-20",
     image: "/api/placeholder/300/400",
-    collection: "COSTA D'ORO",
+    collection: "COSTA D&apos;ORO",
     worn: 1,
     rating: 4
   },
@@ -48,7 +48,7 @@ const mockItems = [
     season: "Todo el año",
     purchaseDate: "2024-01-05",
     image: "/api/placeholder/300/400",
-    collection: "COSTA D'ORO",
+    collection: "COSTA D&apos;ORO",
     worn: 8,
     rating: 4
   }

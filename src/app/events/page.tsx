@@ -23,7 +23,7 @@ const events = [
   },
   {
     id: 2,
-    title: "Trunk Show Exclusivo COSTA D'ORO",
+    title: "Trunk Show Exclusivo COSTA D&apos;ORO",
     description: "Experiencia VIP con acceso anticipado a piezas únicas de nuestra colección dorada.",
     date: "2024-02-22",
     time: "19:30",

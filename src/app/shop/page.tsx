@@ -36,7 +36,7 @@ const products = [
   {
     id: 3,
     name: "Blazer New Arde Lino Natural",
-    collection: "COSTA D'ORO",
+    collection: "COSTA D&apos;ORO",
     price: 419900,
     originalPrice: null,
     rating: 4.7,
@@ -78,7 +78,7 @@ const products = [
   {
     id: 6,
     name: "Crop Top Alma Blanco",
-    collection: "COSTA D'ORO",
+    collection: "COSTA D&apos;ORO",
     price: 209900,
     originalPrice: null,
     rating: 4.5,
@@ -92,7 +92,7 @@ const products = [
 ]
 
 const categories = ["Todos", "Blusas", "Vestidos", "Pantalones", "Faldas", "Blazers"]
-const collections = ["Todas", "TUSCAN SOUL", "COSTA D'ORO"]
+const collections = ["Todas", "TUSCAN SOUL", "COSTA D&apos;ORO"]
 
 export default function Shop() {
   const [searchTerm, setSearchTerm] = useState("")

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Camera, ScanLine, ShoppingBag, Heart, Star, Plus, X, AlertCircle, CheckCircle, Info } from "lucide-react"
+import { Camera, ScanLine, ShoppingBag, Heart, Star, Plus, X, CheckCircle, Info } from "lucide-react"
 
 const mockScanResults = [
   {

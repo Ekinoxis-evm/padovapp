@@ -111,7 +111,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* COSTA D'ORO Collection - Enhanced */}
+            {/* COSTA D&apos;ORO Collection - Enhanced */}
             <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 bg-white">
               <div className="relative bg-gradient-to-br from-yellow-50 to-amber-50 p-12 h-80 flex flex-col justify-center items-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/40 to-amber-100/40 group-hover:scale-110 transition-transform duration-700"></div>
@@ -119,7 +119,7 @@ export default function Home() {
                   ÚLTIMAS
                 </div>
                 <div className="relative z-10 text-center">
-                  <h3 className="text-3xl md:text-4xl font-bold font-playfair text-padova-navy mb-4">COSTA D'ORO</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold font-playfair text-padova-navy mb-4">COSTA D&apos;ORO</h3>
                   <p className="text-lg text-stone-600 mb-6">Costa dorada, elegancia atemporal</p>
                   <div className="inline-flex items-center space-x-2 text-padova-olive-dark font-medium">
                     <ShoppingBag className="w-5 h-5" />
